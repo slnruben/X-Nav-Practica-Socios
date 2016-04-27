@@ -1,0 +1,36 @@
+body{
+  background-color: black;
+}
+#tab1, #tab2{
+  background-color: #cce0ff;
+}
+img{
+  width: 85px;
+  height: 85px;
+}
+h2{
+  margin-top: 12px;
+  margin-bottom: 0%;
+}
+#boton{
+  color: blue;
+  text-align: center;
+}
+p{
+  margin-top: -1px;
+}
+#all div{
+  margin-left: 8%;
+}
+#update div, #myline div{
+  margin-left: 8%;
+}
+span{
+  margin-bottom: 2px;
+}
+
+img{
+  max-width:100%;
+  max-height:100%;
+  border-radius: 50%;
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Example Page</title>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<style>
+	body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	.ui-menu { width: 150px; }
+	#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+ 	#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+	</style>
+</head>
+<body>
+
+<!-- Datepicker -->
+<h2 class="demoHeaders">Datepicker</h2>
+<input id="datepicker">
+
+<ul id="menu">
+  <li class="ui-state-disabled">Aberdeen</li>
+  <li>Ada</li>
+  <li>Adamsville</li>
+  <li>Addyston</li>
+  <li>Delphi
+    <ul>
+      <li class="ui-state-disabled">Ada</li>
+      <li>Saarland</li>
+      <li>Salzburg an der schönen Donau</li>
+    </ul>
+  </li>
+  <li>Saarland</li>
+  <li>Salzburg
+    <ul>
+      <li>Delphi
+        <ul>
+          <li>Ada</li>
+          <li>Saarland</li>
+          <li>Salzburg</li>
+        </ul>
+      </li>
+      <li>Delphi
+        <ul>
+          <li>Ada</li>
+          <li>Saarland</li>
+          <li>Salzburg</li>
+        </ul>
+      </li>
+      <li>Perch</li>
+    </ul>
+  </li>
+  <li class="ui-state-disabled">Amesville</li>
+</ul>
+
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me to my target</p>
+</div>
+ 
+<div id="droppable" class="ui-widget-header">
+  <p>Drop here</p>
+</div>
+
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$( "#datepicker" ).datepicker({
+	inline: true
+});
+
+$(function() {
+    $( "#menu" ).menu();
+});
+
+$(function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  });
+
+</script>
+</body>
+</html>
